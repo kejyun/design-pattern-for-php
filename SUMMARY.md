@@ -1,5 +1,6 @@
 # 摘要
 
+* [概念](basic/basic-concept.md)
 * [常見設計模式](common-design-pattern/common-design-pattern-README.md)
   * [生成（Creational）](common-design-pattern/creational/common-design-pattern-creational-README.md)
     * [簡單工廠（Simple Factory）](to-be_continued.md)
