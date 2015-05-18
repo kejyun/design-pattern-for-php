@@ -185,3 +185,4 @@ class ChefFactory
 
 這樣我們就可以把烹煮這個重複且繁瑣的工作交給餐廳及廚師工廠去處理了！
 
+> [點選下載範例檔案](./example/SimpleFactory.php)
