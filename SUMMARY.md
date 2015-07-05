@@ -3,6 +3,7 @@
 * [概念](basic/basic-concept.md)
 * [常見設計模式](common-design-pattern/common-design-pattern-README.md)
   * [生成（Creational）](common-design-pattern/creational/common-design-pattern-creational-README.md)
+    * [生成模式備註](common-design-pattern/creational/common-design-pattern-creational-memo.md)
     * [簡單工廠（Simple Factory）](common-design-pattern/creational/common-design-pattern-creational-simple-factory.md)
     * [工廠方法（Factory Method）](to-be_continued.md)
     * [抽象工廠（Abstract Factory）](to-be_continued.md)
