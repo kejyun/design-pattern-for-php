@@ -2,6 +2,7 @@
 
 ## 英文
 * [DesignPatternsPHP](http://designpatternsphp.readthedocs.org/en/latest/)
+* [Design Patterns - sourcemaking](https://sourcemaking.com/design_patterns)
 
 ## 中文
 * [設計模式 for PHP](https://github.com/hank7444/DesignPatternPHP)
