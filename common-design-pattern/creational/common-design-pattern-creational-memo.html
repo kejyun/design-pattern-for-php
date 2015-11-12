@@ -1,0 +1,764 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>生成模式備註 | PHP 設計模式</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../common-design-pattern/creational/common-design-pattern-creational-simple-factory.html" />
+    
+    
+    <link rel="prev" href="../../common-design-pattern/creational/common-design-pattern-creational-README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Fri Nov 13 2015 07:28:45 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="basic/basic-concept.html">
+            
+                
+                    <a href="../../basic/basic-concept.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        概念
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="common-design-pattern/common-design-pattern-README.html">
+            
+                
+                    <a href="../../common-design-pattern/common-design-pattern-README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        常見設計模式
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="common-design-pattern/creational/common-design-pattern-creational-README.html">
+            
+                
+                    <a href="../../common-design-pattern/creational/common-design-pattern-creational-README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        生成（Creational）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="common-design-pattern/creational/common-design-pattern-creational-memo.html">
+            
+                
+                    <a href="../../common-design-pattern/creational/common-design-pattern-creational-memo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        生成模式備註
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="common-design-pattern/creational/common-design-pattern-creational-simple-factory.html">
+            
+                
+                    <a href="../../common-design-pattern/creational/common-design-pattern-creational-simple-factory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        簡單工廠（Simple Factory）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.</b>
+                        
+                        工廠方法（Factory Method）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.4.</b>
+                        
+                        抽象工廠（Abstract Factory）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.5.</b>
+                        
+                        生成器（Builder）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.6.</b>
+                        
+                        原型（Prototype）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.7.</b>
+                        
+                        單例（Singleton）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        結構（Structural）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        轉接器（Adapter）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                        橋樑（Bridge）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                        合成（Composite）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.4.</b>
+                        
+                        裝飾（Decorater）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.5.</b>
+                        
+                        表象（Facade）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.6.</b>
+                        
+                        享元（Flyweight）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.7.</b>
+                        
+                        代理人（Proxy）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        行為（Behavioral）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        責任鏈（Chain of Responsibility）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        命令（Command）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.</b>
+                        
+                        解釋器（Interpreter）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.4.</b>
+                        
+                        迭代器（Iterator）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.5.</b>
+                        
+                        中介者（Mediator）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.6.</b>
+                        
+                        備忘錄（Memento）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.7.</b>
+                        
+                        觀察者（Observer）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.8.</b>
+                        
+                        狀態（State）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.9.</b>
+                        
+                        策略（Strategy）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.10.</b>
+                        
+                        樣板方法（Template Method）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.11.</b>
+                        
+                        訪客（Visitor）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="resource/resource-README.html">
+            
+                
+                    <a href="../../resource/resource-README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        學習資源
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="resource/resource-document.html">
+            
+                
+                    <a href="../../resource/resource-document.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        文件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >PHP 設計模式</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="%E7%94%9F%E6%88%90%E6%A8%A1%E5%BC%8F%E4%BD%BF%E7%94%A8%E6%83%85%E5%A2%83">&#x751F;&#x6210;&#x6A21;&#x5F0F;&#x4F7F;&#x7528;&#x60C5;&#x5883;</h1>
+<h2 id="%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%BB%A0%EF%BC%88abstract-factory%EF%BC%89">&#x62BD;&#x8C61;&#x5DE5;&#x5EE0;&#xFF08;Abstract Factory&#xFF09;</h2>
+<p>&#x6709;&#x5171;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x985E;&#x578B;&#xFF0C;&#x4F46;&#x5BE6;&#x4F5C;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;&#x5F97;&#x51FA;&#x4F86;&#x7684;&#x7D50;&#x679C;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x540C;</p>
+<p><em>e.g.</em></p>
+<blockquote>
+<p>&#x68D2;&#x7403;&#x6253;&#x8005;&#x6BCF;&#x500B;&#x4EBA;&#x90FD;&#x9700;&#x8981;&#x6253;&#x64CA;&#xFF08;&#x5171;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x985E;&#x578B;&#xFF09;</p>
+<p>&#x4F46;&#x6BCF;&#x500B;&#x4EBA;&#x7684;&#x6253;&#x64CA;&#x59FF;&#x52E2;&#x90FD;&#x4E0D;&#x540C;&#xFF08;&#x5BE6;&#x4F5C;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#xFF09;</p>
+<p>&#x6BCF;&#x500B;&#x6253;&#x64CA;&#x8005;&#x53EF;&#x80FD;&#x64C5;&#x9577;&#x6253;&#x51FA;&#x6EFE;&#x5730;&#x7403;&#x6216;&#x662F;&#x9AD8;&#x98DB;&#x7403;&#xFF08;&#x5F97;&#x51FA;&#x4F86;&#x7684;&#x7D50;&#x679C;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x540C;&#xFF09;</p>
+</blockquote>
+<ul>
+<li><a href="http://designpatternsphp.readthedocs.org/en/latest/Creational/AbstractFactory/README.html" target="_blank">1.1. Abstract Factory &#x2014; DesignPatternsPHP 1.0 documentation</a></li>
+</ul>
+<h2 id="%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%88builder%EF%BC%89">&#x751F;&#x6210;&#x5668;&#xFF08;Builder&#xFF09;</h2>
+<p>&#x985E;&#x4F3C;&#x7684;&#x7522;&#x54C1;&#xFF0C;&#x6709;&#x985E;&#x4F3C;&#x7684;&#x8907;&#x96DC;&#x7684;&#x5EFA;&#x9020;&#x6D41;&#x7A0B;</p>
+<blockquote>
+<p>e.g. &#x4EA4;&#x901A;&#x5DE5;&#x5177;&#xFF08;&#x6C7D;&#x8ECA;&#x3001;&#x6A5F;&#x8ECA;&#xFF09;&#x5EFA;&#x9020;</p>
+<p>&#x9EB5;&#x98DF;&#x70F9;&#x716E;</p>
+</blockquote>
+<ul>
+<li><a href="http://designpatternsphp.readthedocs.org/en/latest/Creational/Builder/README.html" target="_blank">1.2. Builder &#x2014; DesignPatternsPHP 1.0 documentation</a></li>
+</ul>
+<h2 id="%E5%B7%A5%E5%BB%A0%E6%96%B9%E6%B3%95%EF%BC%88factory-method%EF%BC%89">&#x5DE5;&#x5EE0;&#x65B9;&#x6CD5;&#xFF08;Factory Method&#xFF09;</h2>
+<p>&#x751F;&#x7522;&#x65B9;&#x5F0F;&#x985E;&#x4F3C;&#x3001;&#x5C11;&#x90E8;&#x5206;&#x6709;&#x4E9B;&#x8A31;&#x7684;&#x4E0D;&#x540C;</p>
+<blockquote>
+<p>e.g. &#x5973;&#x751F;&#x5316;&#x599D;&#xFF08;&#x5C0F;&#x82B1;&#x3001;&#x8774;&#x8776;&#x7D50;&#x3001;&#x816E;&#x7D05;&#xFF09;</p>
+</blockquote>
+<ul>
+<li><a href="http://designpatternsphp.readthedocs.org/en/latest/Creational/FactoryMethod/README.html" target="_blank">1.3. Factory Method &#x2014; DesignPatternsPHP 1.0 documentation</a></li>
+</ul>
+<h2 id="%E5%8E%9F%E5%9E%8B%EF%BC%88prototype%EF%BC%89">&#x539F;&#x578B;&#xFF08;Prototype&#xFF09;</h2>
+<p>&#x7522;&#x751F;&#x65B0;&#x7269;&#x4EF6;&#x6210;&#x672C;&#x904E;&#x9AD8;&#x6642;&#xFF0C;&#x76F4;&#x63A5;&#x8907;&#x88FD;&#x5148;&#x524D;&#x751F;&#x6210;&#x7684;&#x539F;&#x578B;&#x7269;&#x4EF6;</p>
+<ul>
+<li><a href="http://designpatternsphp.readthedocs.org/en/latest/Creational/Prototype/README.html" target="_blank">1.6. Prototype &#x2014; DesignPatternsPHP 1.0 documentation</a></li>
+</ul>
+<h2 id="%E7%B0%A1%E5%96%AE%E5%B7%A5%E5%BB%A0%EF%BC%88simple-factory%EF%BC%89">&#x7C21;&#x55AE;&#x5DE5;&#x5EE0;&#xFF08;Simple Factory&#xFF09;</h2>
+<p>&#x751F;&#x7522;&#x65B9;&#x5F0F;&#x76F8;&#x540C;&#xFF0C;&#x7121;&#x4EFB;&#x4F55;&#x5DEE;&#x7570;</p>
+<blockquote>
+<p>e.g. &#x8173;&#x8E0F;&#x8ECA;&#x8207;&#x6469;&#x6258;&#x8ECA;&#xFF08;&#x90FD;&#x662F;&#x5169;&#x8F2A;&#xFF09;</p>
+</blockquote>
+<ul>
+<li><a href="http://designpatternsphp.readthedocs.org/en/latest/Creational/SimpleFactory/README.html" target="_blank">1.7. Simple Factory &#x2014; DesignPatternsPHP 1.0 documentation</a></li>
+</ul>
+<h2 id="%E5%96%AE%E4%BE%8B%EF%BC%88singleton%EF%BC%89-anti-pattern">&#x55AE;&#x4F8B;&#xFF08;Singleton&#xFF09; - Anti-Pattern</h2>
+<p>&#x78BA;&#x4FDD;&#x53EA;&#x6709;&#x55AE;&#x4E00;&#x500B;&#x7269;&#x4EF6;&#x88AB;&#x5EFA;&#x7ACB;</p>
+<ul>
+<li><a href="http://designpatternsphp.readthedocs.org/en/latest/Creational/Singleton/README.html" target="_blank">1.8. Singleton &#x2014; DesignPatternsPHP 1.0 documentation</a></li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../common-design-pattern/creational/common-design-pattern-creational-README.html" class="navigation navigation-prev " aria-label="Previous page: 生成（Creational）"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../common-design-pattern/creational/common-design-pattern-creational-simple-factory.html" class="navigation navigation-next " aria-label="Next page: 簡單工廠（Simple Factory）"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

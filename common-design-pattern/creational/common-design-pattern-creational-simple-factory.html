@@ -1,0 +1,873 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>簡單工廠（Simple Factory） | PHP 設計模式</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../to-be_continued.html" />
+    
+    
+    <link rel="prev" href="../../common-design-pattern/creational/common-design-pattern-creational-memo.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.1.2" data-basepath="../.." data-revision="Fri Nov 13 2015 07:28:45 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="basic/basic-concept.html">
+            
+                
+                    <a href="../../basic/basic-concept.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        概念
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="common-design-pattern/common-design-pattern-README.html">
+            
+                
+                    <a href="../../common-design-pattern/common-design-pattern-README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        常見設計模式
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="common-design-pattern/creational/common-design-pattern-creational-README.html">
+            
+                
+                    <a href="../../common-design-pattern/creational/common-design-pattern-creational-README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        生成（Creational）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="common-design-pattern/creational/common-design-pattern-creational-memo.html">
+            
+                
+                    <a href="../../common-design-pattern/creational/common-design-pattern-creational-memo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        生成模式備註
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.2" data-path="common-design-pattern/creational/common-design-pattern-creational-simple-factory.html">
+            
+                
+                    <a href="../../common-design-pattern/creational/common-design-pattern-creational-simple-factory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        簡單工廠（Simple Factory）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.</b>
+                        
+                        工廠方法（Factory Method）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.4.</b>
+                        
+                        抽象工廠（Abstract Factory）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.5.</b>
+                        
+                        生成器（Builder）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.6.</b>
+                        
+                        原型（Prototype）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.7.</b>
+                        
+                        單例（Singleton）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        結構（Structural）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        轉接器（Adapter）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                        橋樑（Bridge）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                        合成（Composite）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.4.</b>
+                        
+                        裝飾（Decorater）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.5.</b>
+                        
+                        表象（Facade）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.6.</b>
+                        
+                        享元（Flyweight）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.7.</b>
+                        
+                        代理人（Proxy）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        行為（Behavioral）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        責任鏈（Chain of Responsibility）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        命令（Command）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.</b>
+                        
+                        解釋器（Interpreter）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.4.</b>
+                        
+                        迭代器（Iterator）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.5.</b>
+                        
+                        中介者（Mediator）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.6.</b>
+                        
+                        備忘錄（Memento）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.7.</b>
+                        
+                        觀察者（Observer）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.8.</b>
+                        
+                        狀態（State）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.9.</b>
+                        
+                        策略（Strategy）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.10.</b>
+                        
+                        樣板方法（Template Method）
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="to-be_continued.html">
+            
+                
+                    <a href="../../to-be_continued.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.11.</b>
+                        
+                        訪客（Visitor）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="resource/resource-README.html">
+            
+                
+                    <a href="../../resource/resource-README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        學習資源
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="resource/resource-document.html">
+            
+                
+                    <a href="../../resource/resource-document.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        文件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >PHP 設計模式</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="%E7%B0%A1%E5%96%AE%E5%B7%A5%E5%BB%A0%EF%BC%88simple-factory%EF%BC%89">&#x7C21;&#x55AE;&#x5DE5;&#x5EE0;&#xFF08;Simple Factory&#xFF09;</h1>
+<p>&#x6211;&#x5011;&#x5982;&#x679C;&#x60F3;&#x8981;&#x716E;&#x6771;&#x897F;&#x7D66;&#x81EA;&#x5DF1;&#x5403;&#xFF0C;&#x6211;&#x5011;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x300C;&#x6E96;&#x5099;&#x98DF;&#x6750;&#x300D;&#x3001;&#x300C;&#x70F9;&#x716E;&#x98DF;&#x6750;&#x300D;&#x3001;&#x300C;&#x4E0A;&#x83DC;&#x300D;</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">/**
+ * &#x62BD;&#x8C61;&quot;&#x70F9;&#x716E;&quot;&#x985E;&#x5225;
+ */</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cook</span> </span>{
+    <span class="hljs-comment">// &#x6E96;&#x5099;&#x98DF;&#x6750;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareIngredient</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">// &#x70F9;&#x716E;&#x98DF;&#x6750;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cooking</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">// &#x4E0A;&#x83DC;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serve</span><span class="hljs-params">()</span></span>; 
+}
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>&#x5047;&#x5982;&#x6211;&#x5011;&#x60F3;&#x8981;&#x5403;&#x5496;&#x54E9;&#xFF0C;&#x6211;&#x5011;&#x6703;&#x9019;&#x6A23;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">/**
+ * &#x5496;&#x54E9;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Curry</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Cook</span>
+</span>{   
+    <span class="hljs-comment">// &#x6E96;&#x5099;&#x98DF;&#x6750;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareIngredient</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&#x6E96;&#x5099;&#x300C;&#x99AC;&#x9234;&#x85AF;&#x300D;&#x3001;&#x300C;&#x863F;&#x8514;&#x300D;&#x3001;&#x300C;&#x6D0B;&#x8525;&#x300D;&#x3001;&#x300C;&#x8089;&#x300D;\n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// &#x70F9;&#x716E;&#x98DF;&#x6750;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cooking</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&#x4E0B;&#x934B;&#x7092;&#x8089;&#xFF0C;&#x7B49;&#x8089;&#x719F;&#x4E4B;&#x5F8C;&#xFF0C;&#x5C07;&#x300C;&#x99AC;&#x9234;&#x85AF;&#x300D;&#x3001;&#x300C;&#x863F;&#x8514;&#x300D;&#x3001;&#x300C;&#x6D0B;&#x8525;&#x300D;&#x52A0;&#x5230;&#x934B;&#x88E1;&#x4E26;&#x52A0;&#x6EFF;&#x6C34;&#xFF0C;&#x7B49;&#x6C34;&#x6EFE;&#x52A0;&#x5165;&#x5496;&#x54E9;&#x584A;&#x60B6;&#x719F;&#x5373;&#x53EF;\n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// &#x4E0A;&#x83DC;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serve</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&#x76E4;&#x5B50;&#x653E;&#x4E0A;&#x767D;&#x98EF;&#xFF0C;&#x5C07;&#x5496;&#x54E9;&#x6DCB;&#x5728;&#x767D;&#x98EF;&#x5468;&#x570D;&#x5373;&#x53EF;\n&quot;</span>;
+    }
+}
+
+<span class="hljs-variable">$curry</span> = <span class="hljs-keyword">new</span> Curry;
+<span class="hljs-variable">$curry</span>-&gt;prepareIngredient();    <span class="hljs-comment">// &#x6E96;&#x5099;&#x98DF;&#x6750;</span>
+<span class="hljs-variable">$curry</span>-&gt;cooking();              <span class="hljs-comment">// &#x70F9;&#x716E;&#x98DF;&#x6750;</span>
+<span class="hljs-variable">$curry</span>-&gt;serve();                <span class="hljs-comment">// &#x4E0A;&#x83DC;</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>&#x6211;&#x5011;&#x6703;&#x5F97;&#x5230;&#x9019;&#x6A23;&#x7684;&#x7D50;&#x679C;&#xFF1A;</p>
+<pre><code>&#x6E96;&#x5099;&#x300C;&#x99AC;&#x9234;&#x85AF;&#x300D;&#x3001;&#x300C;&#x863F;&#x8514;&#x300D;&#x3001;&#x300C;&#x6D0B;&#x8525;&#x300D;&#x3001;&#x300C;&#x8089;&#x300D;
+&#x4E0B;&#x934B;&#x7092;&#x8089;&#xFF0C;&#x7B49;&#x8089;&#x719F;&#x4E4B;&#x5F8C;&#xFF0C;&#x5C07;&#x300C;&#x99AC;&#x9234;&#x85AF;&#x300D;&#x3001;&#x300C;&#x863F;&#x8514;&#x300D;&#x3001;&#x300C;&#x6D0B;&#x8525;&#x300D;&#x52A0;&#x5230;&#x934B;&#x88E1;&#x4E26;&#x52A0;&#x6EFF;&#x6C34;&#xFF0C;&#x7B49;&#x6C34;&#x6EFE;&#x52A0;&#x5165;&#x5496;&#x54E9;&#x584A;&#x60B6;&#x719F;&#x5373;&#x53EF;
+&#x76E4;&#x5B50;&#x653E;&#x4E0A;&#x767D;&#x98EF;&#xFF0C;&#x5C07;&#x5496;&#x54E9;&#x6DCB;&#x5728;&#x767D;&#x98EF;&#x5468;&#x570D;&#x5373;&#x53EF;
+</code></pre><p>&#x5047;&#x5982;&#x6211;&#x5011;&#x60F3;&#x8981;&#x5403;&#x4E09;&#x660E;&#x6CBB;&#xFF0C;&#x6211;&#x5011;&#x6703;&#x9019;&#x6A23;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">/**
+ * &#x4E09;&#x660E;&#x6CBB;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sandwich</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Cook</span>
+</span>{
+    <span class="hljs-comment">// &#x6E96;&#x5099;&#x98DF;&#x6750;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareIngredient</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&#x6E96;&#x5099;&#x300C;&#x5410;&#x53F8;&#x300D;&#x3001;&#x300C;&#x751F;&#x83DC;&#x300D;&#x3001;&#x300C;&#x5C0F;&#x9EC3;&#x74DC;&#x300D;&#x3001;&#x300C;&#x86CB;&#x300D;&#x3001;&#x300C;&#x8089;&#x300D;\n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// &#x70F9;&#x716E;&#x98DF;&#x6750;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cooking</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&#x5C07;&#x86CB;&#x53CA;&#x8089;&#x714E;&#x719F;&#x3001;&#x751F;&#x83DC;&#x53CA;&#x5C0F;&#x9EC3;&#x74DC;&#x5207;&#x7D72;&#xFF0C;&#x5E73;&#x5747;&#x653E;&#x5728;&#x70E4;&#x597D;&#x7684;&#x571F;&#x53F8;&#x4E0A;&#x593E;&#x8D77;&#x4F86;\n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// &#x4E0A;&#x83DC;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serve</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&#x5410;&#x53F8;&#x5C0D;&#x5207;&#x653E;&#x5728;&#x76E4;&#x5B50;&#x4E0A;&#x5373;&#x53EF;\n&quot;</span>;
+    }
+}
+
+<span class="hljs-variable">$sandwich</span> = <span class="hljs-keyword">new</span> Sandwich;
+<span class="hljs-variable">$sandwich</span>-&gt;prepareIngredient();
+<span class="hljs-variable">$sandwich</span>-&gt;cooking();
+<span class="hljs-variable">$sandwich</span>-&gt;serve();
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>&#x6211;&#x5011;&#x6703;&#x5F97;&#x5230;&#x9019;&#x6A23;&#x7684;&#x7D50;&#x679C;&#xFF1A;</p>
+<pre><code>&#x6E96;&#x5099;&#x300C;&#x5410;&#x53F8;&#x300D;&#x3001;&#x300C;&#x751F;&#x83DC;&#x300D;&#x3001;&#x300C;&#x5C0F;&#x9EC3;&#x74DC;&#x300D;&#x3001;&#x300C;&#x86CB;&#x300D;&#x3001;&#x300C;&#x8089;&#x300D;
+&#x5C07;&#x86CB;&#x53CA;&#x8089;&#x714E;&#x719F;&#x3001;&#x751F;&#x83DC;&#x53CA;&#x5C0F;&#x9EC3;&#x74DC;&#x5207;&#x7D72;&#xFF0C;&#x5E73;&#x5747;&#x653E;&#x5728;&#x70E4;&#x597D;&#x7684;&#x571F;&#x53F8;&#x4E0A;&#x593E;&#x8D77;&#x4F86;
+&#x5410;&#x53F8;&#x5C0D;&#x5207;&#x653E;&#x5728;&#x76E4;&#x5B50;&#x4E0A;&#x5373;&#x53EF;
+</code></pre><p>&#x6240;&#x6709;&#x6211;&#x5011;&#x60F3;&#x8981;&#x5403;&#x7684;&#x6771;&#x897F;&#xFF0C;&#x6211;&#x5011;&#x901A;&#x901A;&#x90FD;&#x9700;&#x8981;&#x7D93;&#x904E;&#x4E00;&#x6A23;&#x7684;&#x6B65;&#x9A5F;&#xFF08;&#x300C;&#x6E96;&#x5099;&#x98DF;&#x6750;&#x300D;&#x3001;&#x300C;&#x70F9;&#x716E;&#x98DF;&#x6750;&#x300D;&#x3001;&#x300C;&#x4E0A;&#x83DC;&#x300D;&#xFF09;&#x53BB;&#x9054;&#x6210;&#xFF0C;&#x56E0;&#x70BA;&#x6BCF;&#x6B21;&#x60F3;&#x8981;&#x5403;&#x500B;&#x6771;&#x897F;&#x90FD;&#x9700;&#x8981;&#x6642;&#x9593;&#x4F86;&#x505A;&#x9019;&#x4E9B;&#x83DC;&#xFF0C;&#x5047;&#x5982;&#x6211;&#x5011;&#x6BD4;&#x8F03;&#x6C92;&#x6709;&#x6642;&#x9593;&#xFF0C;&#x60F3;&#x8981;&#x5230;&#x5916;&#x9762;&#x9910;&#x5EF3;&#x53BB;&#x7528;&#x9910;&#xFF0C;&#x6211;&#x5011;&#x6703;&#x9019;&#x6A23;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">// &#x5230;&#x9910;&#x5EF3;&#x7528;&#x9910;</span>
+<span class="hljs-variable">$restaurant</span> = <span class="hljs-keyword">new</span> Restaurant;
+<span class="hljs-comment">// &#x9EDE;&#x9910;&#xFF1A;&#x5496;&#x54E9;</span>
+<span class="hljs-variable">$restaurant</span>-&gt;order(<span class="hljs-string">&apos;curry&apos;</span>);
+<span class="hljs-comment">// &#x9EDE;&#x9910;&#xFF1A;&#x4E09;&#x660E;&#x6CBB;</span>
+<span class="hljs-variable">$restaurant</span>-&gt;order(<span class="hljs-string">&apos;sandwich&apos;</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x6211;&#x5011;&#x9700;&#x8981;&#x9910;&#x5EF3;&#x4F86;&#x8B93;&#x6211;&#x5011;&#x6709;&#x9019;&#x4E9B;&#x98DF;&#x7269;&#x53EF;&#x4EE5;&#x5403;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x6709;&#x4E86;&#x9910;&#x5EF3;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">/**
+ * &#x9910;&#x5EF3;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Restaurant</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-variable">$meal</span>)</span>
+    </span>{
+        <span class="hljs-comment">// &#x900F;&#x904E;&#x5EDA;&#x5E2B;&#x5DE5;&#x5EE0;&#xFF0C;&#x8058;&#x8ACB;&#x6703;&#x716E;&#x9019;&#x9053;&#x9910;&#x9EDE;&#x7684;&#x5EDA;&#x5E2B;</span>
+        <span class="hljs-variable">$chef</span> = ChefFactory::hireChef(<span class="hljs-variable">$meal</span>);
+
+        <span class="hljs-comment">// &#x70F9;&#x716E;&#x98DF;&#x7269;</span>
+        <span class="hljs-variable">$chef</span>-&gt;prepareIngredient();
+        <span class="hljs-variable">$chef</span>-&gt;cooking();
+        <span class="hljs-variable">$chef</span>-&gt;serve();
+    }
+}
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>&#x9910;&#x5EF3;&#x6703;&#x63D0;&#x4F9B;&#x4ED6;&#x5011;&#x7684;&#x9910;&#x9EDE;&#x8B93;&#x6211;&#x5011;&#x9EDE;&#xFF0C;&#x800C;&#x4ED6;&#x5011;&#x7684;&#x9910;&#x9EDE;&#x9700;&#x8981;&#x7279;&#x5B9A;&#x7684;&#x5EDA;&#x5E2B;&#x624D;&#x6703;&#x70F9;&#x716E;&#xFF0C;&#x6240;&#x4EE5;&#x7576;&#x5BA2;&#x4EBA;&#x9EDE;&#x4E86;&#x9910;&#xFF0C;&#x9910;&#x5EF3;&#x6703;&#x900F;&#x904E;&#x300C;&#x5EDA;&#x5E2B;&#x5DE5;&#x5EE0;&#x300D;&#x8058;&#x8ACB;&#x8A72;&#x5EDA;&#x5E2B;&#x53BB;&#x70F9;&#x716E;&#x9910;&#x9EDE;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">/**
+ * &#x5EDA;&#x5E2B;&#x5DE5;&#x5EE0;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChefFactory</span>
+</span>{
+    <span class="hljs-comment">/**
+     * &#x8058;&#x8ACB;&#x5EDA;&#x5E2B;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hireChef</span><span class="hljs-params">(<span class="hljs-variable">$meal</span>)</span>
+    </span>{
+        <span class="hljs-keyword">switch</span> (<span class="hljs-variable">$meal</span>) {
+            <span class="hljs-comment">// &#x5496;&#x54E9;&#x5EDA;&#x5E2B;</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;curry&apos;</span>:
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Curry();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-comment">// &#x4E09;&#x660E;&#x6CBB;&#x5EDA;&#x5E2B;</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;sandwich&apos;</span>:
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Sandwich();
+                <span class="hljs-keyword">break</span>;
+        }
+    }
+}
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>&#x6211;&#x5011;&#x6703;&#x5F97;&#x5230;&#x9019;&#x6A23;&#x7684;&#x7D50;&#x679C;&#xFF1A;</p>
+<pre><code>&#x6E96;&#x5099;&#x300C;&#x99AC;&#x9234;&#x85AF;&#x300D;&#x3001;&#x300C;&#x863F;&#x8514;&#x300D;&#x3001;&#x300C;&#x6D0B;&#x8525;&#x300D;&#x3001;&#x300C;&#x8089;&#x300D;
+&#x4E0B;&#x934B;&#x7092;&#x8089;&#xFF0C;&#x7B49;&#x8089;&#x719F;&#x4E4B;&#x5F8C;&#xFF0C;&#x5C07;&#x300C;&#x99AC;&#x9234;&#x85AF;&#x300D;&#x3001;&#x300C;&#x863F;&#x8514;&#x300D;&#x3001;&#x300C;&#x6D0B;&#x8525;&#x300D;&#x52A0;&#x5230;&#x934B;&#x88E1;&#x4E26;&#x52A0;&#x6EFF;&#x6C34;&#xFF0C;&#x7B49;&#x6C34;&#x6EFE;&#x52A0;&#x5165;&#x5496;&#x54E9;&#x584A;&#x60B6;&#x719F;&#x5373;&#x53EF;
+&#x76E4;&#x5B50;&#x653E;&#x4E0A;&#x767D;&#x98EF;&#xFF0C;&#x5C07;&#x5496;&#x54E9;&#x6DCB;&#x5728;&#x767D;&#x98EF;&#x5468;&#x570D;&#x5373;&#x53EF;
+
+&#x6E96;&#x5099;&#x300C;&#x5410;&#x53F8;&#x300D;&#x3001;&#x300C;&#x751F;&#x83DC;&#x300D;&#x3001;&#x300C;&#x5C0F;&#x9EC3;&#x74DC;&#x300D;&#x3001;&#x300C;&#x86CB;&#x300D;&#x3001;&#x300C;&#x8089;&#x300D;
+&#x5C07;&#x86CB;&#x53CA;&#x8089;&#x714E;&#x719F;&#x3001;&#x751F;&#x83DC;&#x53CA;&#x5C0F;&#x9EC3;&#x74DC;&#x5207;&#x7D72;&#xFF0C;&#x5E73;&#x5747;&#x653E;&#x5728;&#x70E4;&#x597D;&#x7684;&#x571F;&#x53F8;&#x4E0A;&#x593E;&#x8D77;&#x4F86;
+&#x5410;&#x53F8;&#x5C0D;&#x5207;&#x653E;&#x5728;&#x76E4;&#x5B50;&#x4E0A;&#x5373;&#x53EF;
+</code></pre><p>&#x9019;&#x6A23;&#x6211;&#x5011;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x70F9;&#x716E;&#x9019;&#x500B;&#x91CD;&#x8907;&#x4E14;&#x7E41;&#x7463;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4EA4;&#x7D66;&#x9910;&#x5EF3;&#x53CA;&#x5EDA;&#x5E2B;&#x5DE5;&#x5EE0;&#x53BB;&#x8655;&#x7406;&#xFF0C;&#x4EE5;&#x5F8C;&#x6211;&#x5011;&#x53EA;&#x8981;&#x8CA0;&#x8CAC;&#x9EDE;&#x9910;&#x5C31;&#x597D;&#x4E86;&#xFF01;</p>
+<blockquote>
+<p><a href="example/SimpleFactory.php">&#x9EDE;&#x9078;&#x4E0B;&#x8F09;&#x7BC4;&#x4F8B;&#x6A94;&#x6848;</a></p>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../common-design-pattern/creational/common-design-pattern-creational-memo.html" class="navigation navigation-prev " aria-label="Previous page: 生成模式備註"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../to-be_continued.html" class="navigation navigation-next " aria-label="Next page: 工廠方法（Factory Method）"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
